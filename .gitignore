@@ -1,0 +1,8 @@
+# Build-Ergebnisse - entstehen beim Kompilieren neu und gehoeren nicht ins Repo
+bin/
+obj/
+
+# Editor
+.vs/
+.idea/
+*.user

@@ -26,7 +26,7 @@ while (weiterRechnen)
         switch (operation)
         {
             case "+":
-                addition(zahl1, zahl2);
+                ergebnis = addition(zahl1, zahl2);
                 break;
             case "-":
                 ergebnis = zahl1 - zahl2;
@@ -38,6 +38,8 @@ while (weiterRechnen)
                 if (zahl2 == 0)
                 {
                     Console.WriteLine("Fehler: Division durch 0 ist nicht erlaubt!");
+                    gueltig = false;
+                    break;
                 }
                 ergebnis = zahl1 / zahl2;
                 break;
@@ -47,7 +49,10 @@ while (weiterRechnen)
                 break;
         }
     
-        Console.WriteLine($"Ergebnis: {ergebnis}");
+        if (gueltig)
+        {
+            Console.WriteLine($"Ergebnis: {ergebnis}");
+        }
     }
     catch (FormatException)
     {
@@ -59,15 +64,9 @@ while (weiterRechnen)
     weiterRechnen = antwort == "j";
 }
 
-double addition(zahl1, zahl2)
-{
-    ergebnis = zahl1 + zahl2;
-}
-
 Console.WriteLine("Danke fürs Rechnen, bis bald!");
 
-
-
-
-
-
+double addition(double zahl1, double zahl2)
+{
+    return zahl1 + zahl2;
+}
